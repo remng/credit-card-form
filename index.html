@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credit card form</title>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="successful-message">
+        <p>
+          <img src="./assets/success-icon.svg" alt="success icon" />
+          Credit card added successfully!
+        </p>
+      </div>
+
+      <main>
+        <form>
+          <div class="card-number-wrapper">
+            <label for="card-number">Card number</label>
+            <input
+              type="text"
+              name="card-number"
+              id="card-number"
+              class=""
+              maxlength="16"
+              placeholder="**** **** **** ****"
+            />
+            <p class="error-message">
+              <img src="./assets/warning-icon.svg" alt="warning icon" />
+              Please enter a valid card number
+            </p>
+          </div>
+
+          <div class="wrapper">
+            <label for="cardholder-name">Holder's name</label>
+            <input
+              type="text"
+              name="cardholder-name"
+              id="cardholder-name-input"
+              placeholder="Nome como está no cartão"
+              maxlength="20"
+            />
+          </div>
+
+          <div class="input-wrapper">
+            <div class="validity">
+              <label for="validity">Validity</label>
+              <input
+                type="text"
+                name="validity"
+                id="validity-input"
+                placeholder="mm/aa"
+                maxlength="5"
+              />
+            </div>
+            <div class="cvv-wrapper">
+              <label for="cvv">
+                CVV
+                <img src="./assets/question-icon.svg" alt="question icon" />
+              </label>
+
+              <p class="cvv-description">
+                Card verification value, this is the validation code for online
+                purchases with the credit card, used instead of the password.
+              </p>
+
+              <input
+                type="number"
+                name="cvv"
+                id="cvv-input"
+                placeholder="***"
+              />
+            </div>
+          </div>
+        </form>
+        <div class="card-container">
+          <div class="card">
+            <div class="card-front">
+              <div class="top-info">
+                <div class="card-type">
+                  <img src="./assets/visa-card.svg" alt="visa card icon" />
+                </div>
+                <img
+                  src="./assets/contactless-payment-icon.svg"
+                  alt="contactless payment icon"
+                />
+              </div>
+              <div class="card-number-info">0000 0000 0000 0000</div>
+              <div class="bottom-info">
+                <div class="name">Your name here</div>
+                <div class="date">
+                  <img src="./assets/empty-validity-input-img.svg" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="card-back">
+              <div class="cvv-info">000</div>
+            </div>
+          </div>
+        </div>
+        <p class="security">
+          <img src="./assets/shield-check-icon.svg" alt="shield check icon" />
+          Your data is safe
+        </p>
+      </main>
+
+      <button class="add-card" disabled>
+        <p>Add card</p>
+        <img src="./assets/loading-icon.svg" alt="loading icon" />
+      </button>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
